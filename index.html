@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html>
-<title>Eric's GA-808</title>
+<div class="grad">
+<title>Eric's FEWD-37 Page</title>
 <head>
 <meta charset="utf-8">
 <style>
-body {
-  font-size: 20px;
-  font-family: sans-serif;
-  max-width: 600px;
+.grad {
+  background: linear-gradient(white, lightgrey)
 }
 
-ul {
-  font-family: sans-serif;
-  max-width: 600px;
-}
-
-img {
+.photo {
+  background-image: url("photo.jpg");
+  height: 120px;
+  width: 120px;
   border-radius:50%;
-  margin: auto;
-  width; 80%;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
+.photo:hover {
+  background-image: url("photo2.jpg");
+  height: 120px;
+  width: 120px;
+  border-radius:50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
+a{
+  color: blue
+}
+
+a:hover {
+  color: darkblue
+}
+
+body {
+  font-size: 20px;
+  font-family: helvetica, sans-serif;
+  max-width: 100%;
+}
+
+img {
+  border-radius:50%;
+  width; 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+table, td {
+  border: 1px solid black;
+}
 
 </style>
+
 </head>
 <body>
-  <body style="background-color:lightgreen">
+
 <h1>Eric Bourne</h1>
 <p>
   I'm Eric, and my favorite color is pilsner. I enjoy short walks on the beach, Monty Python, and mutts.
@@ -40,6 +70,11 @@ img {
     <li>mutts</li>
   </ul>
   <p>Here's a picture of me:
-<br><img src="photo.jpg">
+<div class="photo"></div>
+
+<p>
+  Homework:
+</p>
+<p>Week 1</p>
 </html>
 </body>

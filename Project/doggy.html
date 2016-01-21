@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Doggy</title>
+    <style>
+    video#bgvid {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      background: url(doggy.png) no-repeat;
+      background-size: cover;
+      -webkit-filter: blur(3px) hue-rotate(0deg);
+
+}
+    </style>
+  </head>
+  <body>
+    <video autoplay loop poster="doggy.png" id="bgvid">
+        <source src="doggy.mp4" type="video/mp4">
+    </video>
+      <!-- <form name=thisform>
+      <table border=0>
+      <tr><td colspan=2>Position Relative to Top Left of Window</td></tr>
+      <tr><td>X <input type=text name=x value=""></td>
+          <td>Y <input type=text name=y value=""></td>
+      </tr>
+      </table>
+      </form> -->
+
+      <script type=text/javascript>
+      	var isIE = document.all?true:false;
+      	if (!isIE) document.captureEvents(Event.MOUSEMOVE);
+      	document.onmousemove = getMousePosition;
+      	function getMousePosition(mp) {
+      	  var _x;
+      	  var _y;
+      	  if (!isIE) {
+      		_x = mp.pageX;
+      		_y = mp.pageY;
+      	  }
+      	  if (isIE) {
+      		_x = event.clientX + document.body.scrollLeft;
+      		_y = event.clientY + document.body.scrollTop;
+      	  }
+      	  document.thisform.x.value=_x;
+      	  document.thisform.y.value=-_y;
+      	  return true;
+      	}
+
+//Translate _x value  to blur 0 to 20px
+//Translate _y value to hue-rotate 0 to 360deg
+
+//window.screen.availHeight
+//window.screen.availWidth
+
+//divide availHeight by _y for multiplier
+//divide availWidth by _x for multiplier
+
+
+</script>
+
+  </body>
+</html>

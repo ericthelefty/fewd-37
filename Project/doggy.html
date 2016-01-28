@@ -26,12 +26,13 @@
   </head>
   <body>
 
-    DOGGY! Click along the x-axis to adjust DOGPACITY (opacity).<video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
+    DOGGY! Click along the x-axis to adjust DOGPACITY (opacity) and y-axis to adjust hue.<video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
         <source src="doggy.mp4" type="video/mp4">
 
     </video>
 
 <script>
+document.body.addEventListener("mousemove", getClickData);
 
 function getClickData(event) {
 
@@ -47,7 +48,7 @@ function getClickData(event) {
   console.log(hueAmount);
   document.getElementById("bgvid").style.opacity = opacityAmount;
 
-  <!-- document.getElementById("bgvid").style.webkitFilter = "blur(10px) hue-rotate(180deg)"; -->
+  document.getElementById("bgvid").style.webkitFilter = "hue-rotate(" + hueAmount + "deg)";
 
 }
 

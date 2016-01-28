@@ -26,7 +26,7 @@
   </head>
   <body>
 
-    DOGGY!<video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
+    DOGGY! Click along the x-axis to adjust opacity!<video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
         <source src="doggy.mp4" type="video/mp4">
 
     </video>
@@ -42,7 +42,7 @@ function getClickData(event) {
   var widthMult = cursorX/screenWidth;
   var heightMult = cursorY/screenHeight;
   var opacityAmount = widthMult;
-  var hueAmount = heightMult;
+  var hueAmount = heightMult*360;
   console.log(opacityAmount);
   console.log(hueAmount);
   document.getElementById("bgvid").style.opacity = opacityAmount;

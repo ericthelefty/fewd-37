@@ -20,12 +20,13 @@
       background: url(doggy.png) no-repeat;
       background-size: cover;
       opacity: 1;
-
 }
-    </style>
+
+  </style>
   </head>
   <body>
-    <video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
+
+    DOGGY!<video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
         <source src="doggy.mp4" type="video/mp4">
 
     </video>
@@ -41,12 +42,13 @@ function getClickData(event) {
   var widthMult = cursorX/screenWidth;
   var heightMult = cursorY/screenHeight;
   var opacityAmount = widthMult;
-  var hueAmount = heightMult*360;
+  var hueAmount = heightMult;
   console.log(opacityAmount);
   console.log(hueAmount);
   <!-- document.getElementById("bgvid").style.webkitFilter = "blur(10px) hue-rotate(180deg)"; -->
   document.getElementById("bgvid").style.opacity = opacityAmount;
-  document.getElementById("bgvid").style.opacity = hueAmount;
+
+
 }
 
 

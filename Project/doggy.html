@@ -19,52 +19,35 @@
       transform: translateX(-50%) translateY(-50%);
       background: url(doggy.png) no-repeat;
       background-size: cover;
-      -webkit-filter: blur(3px) hue-rotate(0deg);
+      opacity: 1;
 
 }
     </style>
   </head>
   <body>
-    <video autoplay loop poster="doggy.png" id="bgvid">
+    <video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
         <source src="doggy.mp4" type="video/mp4">
+
     </video>
-      <!-- <form name=thisform>
-      <table border=0>
-      <tr><td colspan=2>Position Relative to Top Left of Window</td></tr>
-      <tr><td>X <input type=text name=x value=""></td>
-          <td>Y <input type=text name=y value=""></td>
-      </tr>
-      </table>
-      </form> -->
 
-      <script type=text/javascript>
-      	var isIE = document.all?true:false;
-      	if (!isIE) document.captureEvents(Event.MOUSEMOVE);
-      	document.onmousemove = getMousePosition;
-      	function getMousePosition(mp) {
-      	  var _x;
-      	  var _y;
-      	  if (!isIE) {
-      		_x = mp.pageX;
-      		_y = mp.pageY;
-      	  }
-      	  if (isIE) {
-      		_x = event.clientX + document.body.scrollLeft;
-      		_y = event.clientY + document.body.scrollTop;
-      	  }
-      	  document.thisform.x.value=_x;
-      	  document.thisform.y.value=-_y;
-      	  return true;
-      	}
+<script>
 
-//Translate _x value  to blur 0 to 20px
-//Translate _y value to hue-rotate 0 to 360deg
+function getClickData(event) {
 
-//window.screen.availHeight
-//window.screen.availWidth
-
-//divide availHeight by _y for multiplier
-//divide availWidth by _x for multiplier
+  var cursorX = event.clientX
+  var cursorY = event.clientY
+  var screenWidth = window.innerWidth
+  var screenHeight = window.innerHeight
+  var widthMult = cursorX/screenWidth;
+  var heightMult = cursorY/screenHeight;
+  var opacityAmount = widthMult;
+  var hueAmount = heightMult*360;
+  console.log(opacityAmount);
+  console.log(hueAmount);
+  <!-- document.getElementById("bgvid").style.webkitFilter = "blur(10px) hue-rotate(180deg)"; -->
+  document.getElementById("bgvid").style.opacity = opacityAmount;
+  document.getElementById("bgvid").style.opacity = hueAmount;
+}
 
 
 </script>

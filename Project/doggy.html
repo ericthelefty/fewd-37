@@ -21,12 +21,21 @@
       background-size: cover;
       opacity: 1;
 }
+    div {
+      text-align: center;
+      color: white;
+      font-size: 2em;
+      font-family: sans-serif;
+      text-shadow: 1px 1px black;
+    }
 
   </style>
   </head>
   <body>
-
-    DOGGY! Move cursor along the x-axis to adjust DOGPACITY (opacity) and y-axis to adjust hue.<video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
+    <div>
+    DOGGY! <p>Move cursor along the x-axis to adjust DOGPACITY (opacity) and y-axis to adjust hue.
+  </div>
+    <video autoplay loop poster="doggy.png" id="bgvid" onclick="getClickData(event)">
         <source src="doggy.mp4" type="video/mp4">
 
     </video>
